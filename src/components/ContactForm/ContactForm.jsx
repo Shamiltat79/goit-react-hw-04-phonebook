@@ -3,6 +3,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { nanoid } from 'nanoid';
 
+
 const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;
@@ -12,7 +13,7 @@ const FormWrapper = styled.form`
   /* margin: auto; */
   padding: 24px;
    border: 1px solid black; 
-   background-color: #c27272;
+  
 
 button {
  width: 120px;
@@ -47,6 +48,7 @@ export const ContactForm = ({onSubmit}) => {
 const handleChange = event => {
   const { name, value } = event.target;
 switch(name) {
+   
     case 'name': setName(value);
     break;
     case 'number': setNumber(value);
@@ -58,7 +60,7 @@ switch(name) {
   const handleSubmit = evt => {
     
     evt.preventDefault();
-  onSubmit({name, number});
+  onSubmit({ name, number});
   setName('');
   setNumber('');
     
